@@ -23,7 +23,7 @@ def get_todo_progress(user_id):
     print(f'Employee {user_name} is done with task\
 ({num_completed_tasks}/{num_total_tasks}):')
     for task in completed_tasks:
-        print(f"\t{task['title']}")
+        print(f"\t {task['title']}")
 
 
 if __name__ == "__main__":
