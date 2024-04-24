@@ -21,7 +21,7 @@ def get_todo_progress(user_id):
     num_completed_tasks = len(completed_tasks)
     num_total_tasks = len(todos_data)
 
-    print(f'Employee {user_name} is done with task\
+    print(f'Employee {user_name} is done with tasks\
 ({num_completed_tasks}/{num_total_tasks}):')
     for task in completed_tasks:
         print(f"\t {task['title']}")
