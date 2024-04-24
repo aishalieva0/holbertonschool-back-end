@@ -27,5 +27,6 @@ def get_todo_progress(user_id):
 
 
 if __name__ == "__main__":
-    id = sys.argv[1]
-    get_todo_progress(id)
+    if len(sys.argv) == 2:
+        id = sys.argv[1]
+        get_todo_progress(id)
