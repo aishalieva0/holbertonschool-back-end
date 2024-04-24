@@ -28,7 +28,7 @@ def get_todo_progress(user_id):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 2 or sys.argv[1] is not int:
         exit()
     id = sys.argv[1]
     get_todo_progress(id)
