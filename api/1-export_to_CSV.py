@@ -8,24 +8,26 @@ import sys
 
 def export_to_csv(user_id):
     base_url = "https://jsonplaceholder.typicode.com"
-    user_endpoint = f'{base_url}/users/{user_id}'
-    todo_endpoint = f'{base_url}/todos?userId={user_id}'
+    user_endpoint = f"{base_url}/users/{user_id}"
+    todo_endpoint = f"{base_url}/todos?userId={user_id}"
 
     user_res = requests.get(user_endpoint)
     user_data = user_res.json()
-    user_name = user_data.get('name')
-    user_id = user_data.get('id')
+    user_name = user_data.get("name")
+    user_id = user_data.get("id")
 
     todos_res = requests.get(todo_endpoint)
     todos_data = todos_res.json()
 
-    file_name = f'{user_id}.csv'
+    file_name = f"{user_id}.csv"
 
-    with open(file_name, 'w', newline='') as file:
+    with open(file_name, "w", newline="") as file:
         writer = csv.writer(file)
         for task in todos_data:
-            writer.writerow([f'"{user_id}", "{user_name}", "{task['completed']}", "{task['title']}"'])
-    
+            completed = task["completed"]
+            title = task["title"]
+            writer.writerow([f'"{user_id}","{user_name}","{completed}","{title}"'])
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
