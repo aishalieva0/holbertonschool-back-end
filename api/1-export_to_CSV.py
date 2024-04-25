@@ -24,7 +24,7 @@ def export_to_csv(user_id):
     with open(file_name, 'w', newline='') as file:
         writer = csv.writer(file)
         for task in todos_data:
-            writer.writerow([user_id, user_name, task['completed'], task['title']])
+            writer.writerow([f'"{user_id}", "{user_name}", "{task['completed']}", "{task['title']}"'])
     
 
 if __name__ == "__main__":
