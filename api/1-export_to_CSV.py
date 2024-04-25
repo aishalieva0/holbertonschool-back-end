@@ -22,11 +22,11 @@ def export_to_csv(user_id):
     file_name = f"{user_id}.csv"
 
     with open(file_name, "w", newline="") as file:
-        writer = csv.writer(file, quotechar='"', )
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in todos_data:
             completed = task["completed"]
             title = task["title"]
-            writer.writerow([user_id,user_name, completed, title])
+            writer.writerow([user_id, user_name, completed, title])
 
 
 if __name__ == "__main__":
