@@ -14,7 +14,7 @@ def export_to_csv(user_id):
     user_res = requests.get(user_endpoint)
     user_data = user_res.json()
     user_name = user_data.get('name')
-    user_id = user_data.id()
+    user_id = user_data.get('id')
 
     todos_res = requests.get(todo_endpoint)
     todos_data = todos_res.json()
