@@ -5,7 +5,7 @@ import json
 import requests
 
 
-def export_to_csv(user_id):
+def export_to_json():
     base_url = "https://jsonplaceholder.typicode.com"
     user_endpoint = f"{base_url}/users/"
 
@@ -35,4 +35,4 @@ def export_to_csv(user_id):
 
 
 if __name__ == "__main__":
-    export_to_csv(id)
+    export_to_json()
